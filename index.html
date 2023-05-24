@@ -1,20 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
     <title>The Wedding Of Yunul & Arifa</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
-          theme: {
-            extend: {
-              colors: {
-                clifford: '#da373d',
-              }
+            theme: {
+                colors: {
+                    'blue': '#1fb6ff',
+                    'purple': '#7e5bef',
+                    'pink': '#ff49db',
+                    'orange': '#ff7849',
+                    'green': '#13ce66',
+                    'yellow': '#ffc82c',
+                    'gray-dark': '#273444',
+                    'gray': '#8492a6',
+                    'gray-light': '#d3dce6',
+                },
+                fontFamily: {
+                    sans: ['Graphik', 'sans-serif'],
+                    serif: ['Merriweather', 'serif'],
+                },
+                extend: {
+                    colors: {
+                        clifford: '#da373d',
+
+                    },
+                }
             }
-          }
         }
     </script>
     <style type="text/tailwindcss">
@@ -25,9 +43,16 @@
         }
     </style>
 </head>
-<body>
+
+<body class="antialiased hover:subpixel-antialiased">
     <div class="lg:content-auto">
-        <h1>The Wedding Of Yunul Arifa</h1>
+        <div class="flex h-screen">
+            <div class="m-auto">
+                <div id="title" class="text-3xl text-red-500">The Wedding Of Yunul Arifa</div>
+            </div>
+        </div>
+        
     </div>
 </body>
+
 </html>
