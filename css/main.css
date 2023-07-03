@@ -1171,6 +1171,7 @@ h2 span.bold {
   color: #e2e2e2;
   padding-left: 0.2rem;
   margin-top: 2.9rem;
+  text-align: justify;
 }
 @media only screen and (min-width: 1200px) {
   .block__textStory {
@@ -1178,6 +1179,8 @@ h2 span.bold {
     color: #e2e2e2;
     padding-left: 0.2rem;
     margin-top: 2.9rem;
+    text-align: justify;
+
   }
 }
 .block__text {

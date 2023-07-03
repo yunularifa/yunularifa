@@ -42,6 +42,8 @@
     <meta name="msapplication-navbutton-color" content="#1A1A1A">
     <meta name="apple-mobile-web-app-status-bar-style" content="#1A1A1A">
     <!-- Custom Browser Color End -->
+
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js" integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
     <style>
         @media only screen and (min-width: 1200px) {
             .headline__caption {
@@ -680,7 +682,7 @@
             <div class="inner__footer">
                 <!-- inner footer divider -->
                 <div class="footer__divider"></div>
-                <audio autoplay>
+                <audio id="myAudio">
                     <source src="audio.mp3" type="audio/mpeg">
                 </audio>
             </div>
@@ -831,13 +833,55 @@
     <!-- Load Scripts End -->
     <script type="text/javascript">
         $(window).scroll(function () {
+
+            var lagu = document.getElementById("myAudio");
+    
+            var isPlaying = false;
+
+            function playAudio() {
+            lagu.play();
+            }
             if ($(this).scrollTop() > 0) {
                 $('.header').fadeOut();
+                
             } else {
                 $('.header').fadeIn();
+                playAudio();
             }
         });
     </script>
+                    <script>
+                        var lagu = document.getElementById("myAudio");
+    
+                        var isPlaying = false;
+    
+                        function playAudio() {
+                        lagu.play();
+                        }
+                        function togglePlay() {
+    
+                        if (isPlaying) {
+                        myAudio.pause();
+                        } else {
+                        myAudio.play();
+                        }
+                        };
+                        myAudio.onplaying = function() {
+                        isPlaying = true;
+    
+                        };
+                        myAudio.onpause = function() {
+    
+                        isPlaying = false;
+    
+                        };
+                        myAudio.addEventListener('ended', function() {
+                        this.currentTime = 0;
+                        this.play();
+                        }, false);
+    
+                       
+                    </script>
 </body>
 
 </html>

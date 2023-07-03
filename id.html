@@ -638,7 +638,7 @@
             <div class="inner__footer">
                 <!-- inner footer divider -->
                 <div class="footer__divider"></div>
-                <audio autoplay>
+                <audio id="myAudio">
                     <source src="audio.mp3" type="audio/mpeg">
                 </audio>
             </div>
@@ -789,13 +789,55 @@
     <!-- Load Scripts End -->
     <script type="text/javascript">
         $(window).scroll(function () {
+
+            var lagu = document.getElementById("myAudio");
+    
+            var isPlaying = false;
+
+            function playAudio() {
+            lagu.play();
+            }
             if ($(this).scrollTop() > 0) {
                 $('.header').fadeOut();
+                
             } else {
                 $('.header').fadeIn();
+                playAudio();
             }
         });
     </script>
+                    <script>
+                        var lagu = document.getElementById("myAudio");
+    
+                        var isPlaying = false;
+    
+                        function playAudio() {
+                        lagu.play();
+                        }
+                        function togglePlay() {
+    
+                        if (isPlaying) {
+                        myAudio.pause();
+                        } else {
+                        myAudio.play();
+                        }
+                        };
+                        myAudio.onplaying = function() {
+                        isPlaying = true;
+    
+                        };
+                        myAudio.onpause = function() {
+    
+                        isPlaying = false;
+    
+                        };
+                        myAudio.addEventListener('ended', function() {
+                        this.currentTime = 0;
+                        this.play();
+                        }, false);
+    
+                       
+                    </script>
 </body>
 
 </html>
