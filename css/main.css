@@ -115,7 +115,7 @@
 }
 
 .inner-image-block-2 {
-  background-image: url("https://dummyimage.com/1200x800/4d4d4d/636363");
+  background-image: url("../img/OurStory.png");
 }
 
 .inner-video {
@@ -834,7 +834,7 @@ img {
 }
 #header.header-scroll.light-bg .header__logo::after {
   opacity: 1;
-  background-image: url("../img/logo-light.svg");
+  background-image: url("../img/logo-light.png");
 }
 #header.header-scroll.light-fullscreen {
   background-color: rgba(0, 0, 0, 0.4);
@@ -1165,12 +1165,27 @@ h2 span.bold {
   background-image: url("../img/icons/20x20-star-dark.svg");
 }
 
+.block__textStory {
+  font: normal 200 1.3rem/1.6 "Plus Jakarta Sans", sans-serif;
+  color: #e2e2e2;
+  padding-left: 0.2rem;
+  margin-top: 2.9rem;
+}
+@media only screen and (min-width: 1200px) {
+  .block__textStory {
+    font: normal 200 1.8rem/1.6 "Plus Jakarta Sans", sans-serif;
+    color: #e2e2e2;
+    padding-left: 0.2rem;
+    margin-top: 2.9rem;
+  }
+}
 .block__text {
   font: normal 200 1.8rem/1.6 "Plus Jakarta Sans", sans-serif;
   color: #e2e2e2;
   padding-left: 0.2rem;
   margin-top: 2.9rem;
 }
+  
 .block__text.half-text {
   max-width: 600px;
 }
@@ -1779,7 +1794,7 @@ form textarea:required:valid {
 }
 .header.menu-is-visible.light-fullscreen .header__logo::after {
   opacity: 1;
-  background-image: url("../img/logo-dark.svg");
+  background-image: url("../img/logo-dark.png");
 }
 .header.menu-is-visible.light-fullscreen .header__underline {
   background-color: #7f8678;
@@ -1799,7 +1814,7 @@ form textarea:required:valid {
 }
 .header.inner-is-visible.light-bg .header__logo::after {
   opacity: 1;
-  background-image: url("../img/logo-light.svg");
+  background-image: url("../img/logo-light.png");
 }
 .header.inner-is-visible.light-fullscreen .menu-trigger {
   font-weight: 600;
@@ -1865,7 +1880,7 @@ form textarea:required:valid {
   height: 100%;
   background-repeat: no-repeat;
   opacity: 0;
-  background-image: url("../img/logo-light.svg");
+  background-image: url("../img/logo-light.png");
   z-index: -1;
   -webkit-transition: opacity 0.3s ease-in-out;
   -o-transition: opacity 0.3s ease-in-out;
@@ -1877,7 +1892,7 @@ form textarea:required:valid {
 }
 .header__logo.replace-to-light::after {
   opacity: 1;
-  background-image: url("../img/logo-light.svg");
+  background-image: url("../img/logo-light.png");
 }
 
 .header__underline {
