@@ -52,6 +52,25 @@
                 max-width: 140px;
             }
         }
+        .btn-dark{
+            --bs-btn-color: #fff;
+--bs-btn-bg: #212529;
+--bs-btn-border-color: #212529;
+--bs-btn-hover-color: #fff;
+--bs-btn-hover-bg: #424649;
+--bs-btn-hover-border-color: #373b3e;
+--bs-btn-focus-shadow-rgb: 66,70,73;
+--bs-btn-active-color: #fff;
+--bs-btn-active-bg: #4d5154;
+--bs-btn-active-border-color: #373b3e;
+--bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+--bs-btn-disabled-color: #fff;
+--bs-btn-disabled-bg: #212529;
+--bs-btn-disabled-border-color: #212529;
+border-radius: 0.3rem;
+border: 1 solid #212529;
+padding: 0.2rem 0.5rem;
+        }
     </style>
 
 </head>
@@ -168,20 +187,7 @@
             </div>
             <!-- Content Block - Navigation End -->
 
-            <div
-                class="nav__footer d-md-flex text-center text-md-start align-items-md-center justify-content-md-between">
-                <ul class="socials socials-text">
-                    <li><a href="https://www.facebook.com/" target="_blank" class="link-s">Facebook</a></li>
-                    <li><a href="https://www.instagram.com/" target="_blank" class="link-s">Instagram</a></li>
-                    <li><a href="https://twitter.com/" target="_blank" class="link-s">Twitter</a></li>
-                </ul>
-                <p class="copyright">
-                    Made with
-                    <i class="fa-solid fa-heart"></i>
-                    <a href="https://themeforest.net/user/mix_design/portfolio" target="_blank" class="link-s"> by
-                        Mix_Design</a>, 2023
-                </p>
-            </div>
+
 
         </div>
         <!-- Navigation Container End -->
@@ -218,14 +224,16 @@
                                 wedding ceremony</span>
                         </div>
                         <!-- Headline End -->
-
+                        <div class="text-center mt-3">
+                            <button type="button" id="openBtn" class="btn btn-dark btn-sm">More Information</button>
+                        </div>
                     </div>
                     <!-- Intro Content End -->
-
+                    
                     <!-- Fullscreen Footer Start -->
                     <div class="intro__footer bottom-mobile">
-
                         <!-- Footer Content Start -->
+                        
                         <div
                             class="footer__container d-md-flex text-center text-md-start align-items-md-center justify-content-md-between">
                             <!-- socials -->
@@ -287,7 +295,7 @@
                         <!-- About Us Description & Image #1 Start -->
                         <div class="row gx-0">
                             <div class="col-12 col-xl-6">
-                                <div class="content-block text-center">
+                                <div class="content-block text-center" id="details">
                                     <div class="text-content-block">
                                         <span class="block__subtitle"></span>
                                         <h2 class="block__title">One of the <span class="italic">beautiful</span> ways
@@ -833,55 +841,27 @@
     <!-- Load Scripts End -->
     <script type="text/javascript">
         $(window).scroll(function () {
-
-            var lagu = document.getElementById("myAudio");
-    
-            var isPlaying = false;
-
-            function playAudio() {
-            lagu.play();
-            }
             if ($(this).scrollTop() > 0) {
                 $('.header').fadeOut();
                 
             } else {
                 $('.header').fadeIn();
-                playAudio();
+                
             }
         });
+        $("#openBtn").click(function() {
+            var lagu = document.getElementById("myAudio");
+            var isPlaying = false;
+            function playAudio() {
+                lagu.play();
+            }
+            playAudio();
+            $('html, body').animate({
+                scrollTop: $("#details").offset().top
+            }, 2000);
+            
+        });
     </script>
-                    <script>
-                        var lagu = document.getElementById("myAudio");
-    
-                        var isPlaying = false;
-    
-                        function playAudio() {
-                        lagu.play();
-                        }
-                        function togglePlay() {
-    
-                        if (isPlaying) {
-                        myAudio.pause();
-                        } else {
-                        myAudio.play();
-                        }
-                        };
-                        myAudio.onplaying = function() {
-                        isPlaying = true;
-    
-                        };
-                        myAudio.onpause = function() {
-    
-                        isPlaying = false;
-    
-                        };
-                        myAudio.addEventListener('ended', function() {
-                        this.currentTime = 0;
-                        this.play();
-                        }, false);
-    
-                       
-                    </script>
 </body>
 
 </html>
