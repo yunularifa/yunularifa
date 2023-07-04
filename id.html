@@ -69,8 +69,28 @@
 border-radius: 0.3rem;
 border: 1 solid #212529;
 padding: 0.2rem 0.5rem;
+        }.fade{
+            opacity: 1;
         }
     </style>
+    <script>
+        $(window).on("load",function() {
+  $(window).scroll(function() {
+    var windowBottom = $(this).scrollTop() + $(this).innerHeight();
+    $(".fade").each(function() {
+      /* Check the location of each desired element */
+      var objectBottom = $(this).offset().top + $(this).outerHeight();
+      
+      /* If the element is completely within bounds of the window, fade it in */
+      if (objectBottom < windowBottom) { //object comes into view (scrolling down)
+        if ($(this).css("opacity")==0) {$(this).fadeTo(1000,1);}
+      } else { //object goes out of view (scrolling up)
+        if ($(this).css("opacity")==1) {$(this).fadeTo(1000,0);}
+      }
+    });
+  }).scroll(); //invoke scroll-handler on page-load
+});
+    </script>
 
 </head>
 
@@ -379,12 +399,12 @@ padding: 0.2rem 0.5rem;
                                         <div class="container-fluid px-0">
                                             <div class="row gx-5 team justify-content-center">
                                                 <!-- team single item -->
-                                                <div class="col-12 col-md-6 col-xl-3 team__item">
+                                                <div class="col-12 col-md-6 col-xl-3 team__item fade">
                                                     <div class="team__image">
                                                         <img src="img/groom.png" alt="Finley Template Team Image">
                                                         <ul class="team__socials socials socials-icons">
-                                                            <li><a href="" target="_blank"
-                                                                    class="link-s">IG</a></li>
+                                                            <li><a href="https://www.instagram.com/null_fik/" target="_blank"
+                                                                class="link-s">INSTAGRAM</a></li>
                                                         </ul>
                                                     </div>
                                                     <div class="team__descr">
@@ -397,12 +417,12 @@ padding: 0.2rem 0.5rem;
                                                     </div>
                                                 </div>
                                                 <!-- team single item -->
-                                                <div class="col-12 col-md-6 col-xl-3 team__item">
+                                                <div class="col-12 col-md-6 col-xl-3 team__item fade">
                                                     <div class="team__image">
                                                         <img src="img/bride.png" alt="Finley Template Team Image">
                                                         <ul class="team__socials socials socials-icons">
-                                                            <li><a href="" target="_blank"
-                                                                    class="link-s">IG</a></li>
+                                                            <li><a href="https://www.instagram.com/arifaafnan/" target="_blank"
+                                                                class="link-s">INSTAGRAM</a></li>
                                                         </ul>
                                                     </div>
                                                     <div class="team__descr">
